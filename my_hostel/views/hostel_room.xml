@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_hostel_room_list" model="ir.ui.view">
+            <field name="name">Hostel Room form</field>
+            <field name="model">hostel.room</field>
+            <field name="arch" type="xml">
+                <form string="hostel room Information">
+                    <sheet>
+                        <group>
+                            <field name="room_name"/>
+                            <field name="room_number"/>
+                            <field name="floor_number"/>
+                            <field name="currency_id"/>
+                            <field name="rent_amount"/>
+                            <field name="hostel_id"/>
+                            <field name="student_ids"/>
+                            <field name="hostel_amenities_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+</odoo>
