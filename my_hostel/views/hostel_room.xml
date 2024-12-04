@@ -7,6 +7,7 @@
                 <form string="hostel room Information">
                     <sheet>
                         <group>
+                            <field name="category_id"/>
                             <field name="room_name"/>
                             <field name="room_number"/>
                             <field name="floor_number"/>
@@ -14,7 +15,12 @@
                             <field name="rent_amount"/>
                             <field name="hostel_id"/>
                             <field name="student_ids"/>
-                            <field name="hostel_amenities_ids"/>
+                            <field name="amenity_ids"/>
+                            <field name="student_per_room"/>
+                            <field name="availability"/>
+                            <field name="admission_date"/>
+                            <field name="discharge_date"/>
+                            <field name="duration"/>
                         </group>
                     </sheet>
                 </form>

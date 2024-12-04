@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="view_hostel_amenities_list" model="ir.ui.view">
+        <record id="view_hostel_amenities_form" model="ir.ui.view">
             <field name="name">Hostel amenities form</field>
             <field name="model">hostel.amenities</field>
             <field name="arch" type="xml">
@@ -8,6 +8,8 @@
                     <sheet>
                         <group>
                             <field name="name"/>
+                            <field name="hostel_id"/>
+                            <field name="active"/>
                         </group>
                     </sheet>
                 </form>
