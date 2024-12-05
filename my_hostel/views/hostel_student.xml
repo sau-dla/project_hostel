@@ -8,7 +8,8 @@
                         <field name="name"/>
                         <field name="gender"/>
                         <field name="date_of_birth"/>
-                        <field name="hostel_id"></field>
+                        <field name="room_id" />
+                        <field name="hostel_id"/>
                 </list>
             </field>
         </record>
