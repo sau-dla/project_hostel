@@ -18,12 +18,13 @@ Efficient management of all residential facilities in the school.
         'views/hostel_student.xml',
         'views/hostel_amenities.xml',
         'views/hostel_category.xml',
+        'views/hostel_book.xml',
         'views/action.xml',
         'views/menu.xml',
     ],
     'assets': {
         'web.assets_backend': [
-            'web/static/src/xml/**/*', 
+            # 'web/static/src/xml/**/*', 
             ],
     },
 }

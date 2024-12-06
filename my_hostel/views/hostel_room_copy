@@ -5,13 +5,6 @@
             <field name="model">hostel.room</field>
             <field name="arch" type="xml">
                 <form string="hostel room Information">
-                    <group>
-                            <button name="make_available" string="mark as available"
-                                    type="object"/>
-                            <button name="make_closed" string="mark as busy" 
-                                    type="object"/>
-                            <field name="state" widget="statusbar"/>
-                        </group>
                     <sheet>
                         <group>
                             <field name="room_name"/>
@@ -21,7 +14,7 @@
                             <field name="rent_amount"/>
                             <field name="hostel_id"/>
                             <field name="student_ids"/>
-                            <field name="amenity_ids"/>
+                            <field name="amenity_ids_copy"/>
                             <field name="student_per_room"/>
                             <field name="availability"/>
                             <field name="admission_date"/>
