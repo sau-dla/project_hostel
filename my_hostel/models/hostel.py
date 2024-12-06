@@ -4,7 +4,7 @@ class Hostel(models.Model):
     _name = 'hostel.hostel' 
     _description = "Information about the hostel"
     _order = "id desc, name"
-    _rec_name = 'city' 
+    _rec_name = 'name' 
 
     name = fields.Char(string="Hostel name", required=True)
     hostel_code = fields.Char(string="Code", required=True)
@@ -22,6 +22,10 @@ class Hostel(models.Model):
     other_info = fields.Text("Other Information",
                             help="Enter more information")
     description = fields.Html('Description')
+
+    category_id = fields.Many2one('hostel.category',
+    string="Category", help="Enter category")
+
     hostel_rating = fields.Float('Average Hostel Rating',
                                 digits=(14, 4)) 
     display_name = fields.Char(string='Display name', compute='_compute_display_name', store=True)
@@ -34,3 +38,15 @@ class Hostel(models.Model):
             if record.hostel_code:
                 name = f'{name} ({record.hostel_code})'
             record.display_name = name
+    
+    @api.model
+    def _referencable_models(self):
+        models = self.env['ir.model'].search([
+            ('field_id.name', '=', 'message_ids')
+        ])
+        return [(x.model, x.name) for x in models]
+    
+    ref_doc_id = fields.Reference(
+        selection='_referencable_models',
+        string='Documento de Referencia'
+    )

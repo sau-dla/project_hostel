@@ -60,4 +60,29 @@
                 </p>
             </field> 
         </record>   
+
+        <record id="action_hostel_book" model="ir.actions.act_window">
+            <field name="name">Hostel book</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Book
+                </p>
+            </field> 
+        </record> 
+
+        <record id="action_hostel_room_copy" model="ir.actions.act_window">
+            <field name="name">Hostel room copy</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hostel.room</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Create a room
+                </p>
+            </field>
+        </record>
+
 </odoo>
