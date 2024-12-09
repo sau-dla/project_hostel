@@ -1,7 +1,10 @@
 from odoo import models, fields, api
+from odoo.exceptions import UserError
+from odoo.tools.translate import _
 
 class HostelRoom(models.Model):
     _name = "hostel.room"
+    _inherit = ['base.archive']
     _description = "Hostel Room Information"  
     
     room_name = fields.Char(
@@ -13,14 +16,17 @@ class HostelRoom(models.Model):
     floor_number = fields.Char(
         'FLoor No.', help="Enter the floor number")
 
+    state = fields.Selection([
+        ('draft', 'Unavailable'),
+        ('available', 'Available'),
+        ('closed', 'Closed')],
+        'State', default="draft")
+
     currency_id = fields.Many2one('res.currency',
     string='Currency')
 
     rent_amount = fields.Monetary(
         'Rent Amount', help="Enter the floor number")
-
-    category_id = fields.Many2one('hostel.category',
-    string="Category", help="Enter category")
 
     hostel_id = fields.Many2one("hostel.hostel", "hostel",
     help="Name of hostel")
@@ -57,7 +63,7 @@ class HostelRoom(models.Model):
         """Method to check duration based on admission and discharge dates."""
         for record in self:
             if record.discharge_date and record.admission_date:
-                record.duration = (record.discharge_date - record.admission_date).days
+                record.duration = (record.discharge_date - record.admission_date).days 
 
     def _inverse_duration(self):
         for record in self:
@@ -66,3 +72,30 @@ class HostelRoom(models.Model):
                 new_discharge_date = record.admission_date + timedelta(days=record.duration)
                 if new_discharge_date != record.discharge_date:
                     record.discharge_date = new_discharge_date.strftime('%Y-%m-%d')
+    @api.model
+    def is_allowed_transition(self, old_state, new_state):
+        allowed = [('draft', 'available'),
+                ('available', 'closed'),
+                ('closed', 'draft')] 
+        return (old_state, new_state) in allowed
+
+    def change_state(self, new_state):
+        for room in self:
+            if room.is_allowed_transition(room.state, new_state):
+                room.state = new_state
+            else:
+                msg = _('Moving from %s to %s is not allowed') % (room.state, new_state) 
+                raise UserError(msg)
+
+    def make_available(self):
+        self.change_state('available')
+
+    def make_closed(self):
+        self.change_state('closed')      
+
+    def log_all_room_members(self):
+        hostel_room_obj = self.env['hostel.room.member']
+        
+        all_members = hostel_room_obj.search([])
+        print("ALL MEMBERS:", all_members)
+        return True
