@@ -1,4 +1,7 @@
 from odoo import fields, models, api
+from odoo.exceptions import UserError
+from odoo.tools.translate import _
+import requests
 
 class Hostel(models.Model):
     _name = 'hostel.hostel' 
@@ -18,7 +21,7 @@ class Hostel(models.Model):
     mobile = fields.Char('Cellular', required=True)
     email = fields.Char('Email')
     active = fields.Boolean("Active", default=True,
-                        help="Activar/Desactivar registro de hostal")
+                        help="Activate/Deactivate hostel registration")
     other_info = fields.Text("Other Information",
                             help="Enter more information")
     description = fields.Html('Description')
@@ -48,5 +51,14 @@ class Hostel(models.Model):
     
     ref_doc_id = fields.Reference(
         selection='_referencable_models',
-        string='Documento de Referencia'
+        string='Reference document'
     )
+    
+    def post_to_webservice(self, data):
+        try:
+            req = requests.post('http://my-test-service.com', data=data, timeout=10)
+            content = req.json()
+        except IOError:
+            error_msg = _("Something went wrong while sending data")
+            raise UserError(error_msg)
+        return content

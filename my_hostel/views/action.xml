@@ -85,4 +85,15 @@
             </field>
         </record>
 
+        <record id="action_hostel_room_member" model="ir.actions.act_window">
+            <field name="name">Hostel room member</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hostel.room.member</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                room members
+                </p>
+            </field>
+        </record>
 </odoo>

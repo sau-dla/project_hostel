@@ -1,4 +1,6 @@
 from odoo import models, fields, api
+from odoo.exceptions import UserError
+from odoo.tools.translate import _
 
 class HostelRoom(models.Model):
     _name = "hostel.room"
@@ -79,13 +81,21 @@ class HostelRoom(models.Model):
 
     def change_state(self, new_state):
         for room in self:
-            if room.is_allowed_transition(room.state, 
-                                        new_state):
+            if room.is_allowed_transition(room.state, new_state):
                 room.state = new_state
             else:
-                continue
+                msg = _('Moving from %s to %s is not allowed') % (room.state, new_state) 
+                raise UserError(msg)
+
     def make_available(self):
         self.change_state('available')
 
     def make_closed(self):
         self.change_state('closed')      
+
+    def log_all_room_members(self):
+        hostel_room_obj = self.env['hostel.room.member']
+        
+        all_members = hostel_room_obj.search([])
+        print("ALL MEMBERS:", all_members)
+        return True

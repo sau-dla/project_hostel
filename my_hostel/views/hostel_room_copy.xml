@@ -14,7 +14,7 @@
                             <field name="rent_amount"/>
                             <field name="hostel_id"/>
                             <field name="student_ids"/>
-                            <field name="amenity_ids_copy"/>
+                            <field name="amenity_ids"/>
                             <field name="student_per_room"/>
                             <field name="availability"/>
                             <field name="admission_date"/>
