@@ -6,7 +6,7 @@ class HostelCategory(models.Model):
     _parent_store = True
     _parent_name = "parent_id"
 
-    name_category = fields.Char(string='Name_category', required=True, translate=True)
+    name = fields.Char(string='Name_category', required=True, translate=True)
     parent_path = fields.Char(index=True)
     parent_id = fields.Many2one('hostel.category', string='Parent Category', ondelete='cascade')
     child_ids = fields.One2many('hostel.category', 'parent_id', string='Child Categories')
@@ -30,7 +30,7 @@ class HostelCategory(models.Model):
             'description': 'Description for child 2'
         }
         parent_category_val = {
-            'name_category': 'Main category',
+            'name': 'Main category',
             'description': 'Description for parent category',
             'child_ids': [
                 (0, 0, categ1),
@@ -42,11 +42,11 @@ class HostelCategory(models.Model):
 
     def create_multiple_categories(self):
         categ1 = {
-            'name_category': 'Category 1',
+            'name': 'Category 1',
             'description': 'Description for Category 1'
         }
         categ2 = {
-            'name_category': 'Category 2',
+            'name': 'Category 2',
             'description': 'Description for Category 2'
         }
         self.env['hostel.category'].create([categ1, categ2])

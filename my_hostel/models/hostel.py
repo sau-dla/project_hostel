@@ -7,7 +7,7 @@ class Hostel(models.Model):
     _name = 'hostel.hostel' 
     _description = "Information about the hostel"
     _order = "id desc, name"
-    _rec_name = 'name' 
+    _rec_name_search = ['name', 'code']
 
     name = fields.Char(string="Hostel name", required=True)
     hostel_code = fields.Char(string="Code", required=True)

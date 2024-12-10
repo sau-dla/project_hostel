@@ -8,6 +8,8 @@
       <list>
         <field name="name"/>
         <field name="hostel_code"/>
+        <field name="email"/>
+        <field name="city"/>
       </list>
     </field>
   </record>

@@ -8,6 +8,7 @@ Efficient management of all residential facilities in the school.
     'website': "http://www.example.com",
     'category': 'Uncategorized',
     'version': '18.0',
+    'license': 'AGPL-3',
     'depends': ['base'],
     'data': [
         'data/data.xml',

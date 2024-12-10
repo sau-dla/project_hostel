@@ -4,7 +4,7 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
     is_hostel_rector = fields.Boolean("Hostel Director",
                         help="Activate if the following person is the hostel director")
-    assign_room_ids = fields.Many2many('library.book', string='Authorized Books') 
+    assign_room_ids = fields.Many2many('hostel.room', string="Assigned Rooms" )
     count_assign_room = fields.Integer('Number of Authorized Books', compute="_compute_count_room")
 
     @api.depends('assign_room_ids')
