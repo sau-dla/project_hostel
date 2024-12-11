@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
         <record id="view_hostel_room_form" model="ir.ui.view">
-            <field name="name">Hostel Room form</field>
+            <field name="name">hostel Room form</field>
             <field name="model">hostel.room</field>
             <field name="arch" type="xml">
                 <form string="hostel room Information">   
@@ -21,30 +21,38 @@
                             <field name="currency_id"/>
                             <field name="rent_amount"/>
                             <field name="hostel_id"/>
-                            <field name="student_ids"/>
-                            <field name="amenity_ids"/>
                             <field name="student_per_room"/>
                             <field name="availability"/>
                             <field name="admission_date"/>
                             <field name="discharge_date"/>
                             <field name="duration"/>
                         </group>
+                        <notebook>
+                            <page string="Students">
+                                <field name="student_ids"/>
+                            </page>
+                            <page string="Amenities">
+                                <field name="amenity_ids" widget="many2many_tags"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
+
 
         <record id="hostel_room_list" model="ir.ui.view">
             <field name="name">hostel.room.list</field>
             <field name="model">hostel.room</field>
             <field name="arch" type="xml">
                 <list>
-                    <field name="state"/>
                     <field name="room_name"/>
-                    <field name="room_number"/>          
+                    <field name="room_number"/>
                     <field name="floor_number"/>
-                    <field name="currency_id"/>
+                    <field name="state"/>
                     <field name="rent_amount"/>
+                    <field name="hostel_id"/>
+                    <field name="availability"/>
                 </list>
             </field>
         </record>
