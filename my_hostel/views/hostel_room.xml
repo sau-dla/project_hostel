@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="view_hostel_room_list" model="ir.ui.view">
+        <record id="view_hostel_room_form" model="ir.ui.view">
             <field name="name">Hostel Room form</field>
             <field name="model">hostel.room</field>
             <field name="arch" type="xml">
-                <form string="hostel room Information">
+                <form string="hostel room Information">   
+                    <header>
+                            <button name="make_available" string="Make Available" type="object"/>
+                            <button name="make_closed" string="Make Borrowed" type="object"/>
+                            <field name="state" widget="statusbar"/>
+                            <button name="log_all_room_members" string="Log Members" type="object"/>
+                            <button name="get_rooms_with_kitchen_and_balcony" type="object" string="Rooms with Kitchen and Balcony"/>
+                    </header>
                     <sheet>
                         <group>
-                            <field name="category_id"/>
+                            <field name="state"/>
                             <field name="room_name"/>
-                            <field name="room_number"/>
+                            <field name="room_number"/>          
                             <field name="floor_number"/>
                             <field name="currency_id"/>
                             <field name="rent_amount"/>
@@ -26,4 +33,20 @@
                 </form>
             </field>
         </record>
+
+        <record id="hostel_room_list" model="ir.ui.view">
+            <field name="name">hostel.room.list</field>
+            <field name="model">hostel.room</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="state"/>
+                    <field name="room_name"/>
+                    <field name="room_number"/>          
+                    <field name="floor_number"/>
+                    <field name="currency_id"/>
+                    <field name="rent_amount"/>
+                </list>
+            </field>
+        </record>
+
 </odoo>

@@ -8,6 +8,7 @@ Efficient management of all residential facilities in the school.
     'website': "http://www.example.com",
     'category': 'Uncategorized',
     'version': '18.0',
+    'license': 'AGPL-3',
     'depends': ['base'],
     'data': [
         'data/data.xml',
@@ -15,15 +16,18 @@ Efficient management of all residential facilities in the school.
         'security/ir.model.access.csv',
         'views/hostel.xml',
         'views/hostel_room.xml',
+        'views/hostel_room_copy.xml',
         'views/hostel_student.xml',
         'views/hostel_amenities.xml',
         'views/hostel_category.xml',
+        'views/hostel_book.xml',
+        'views/hostel_room_members.xml',
         'views/action.xml',
         'views/menu.xml',
     ],
     'assets': {
         'web.assets_backend': [
-            'web/static/src/xml/**/*', 
+            # 'web/static/src/xml/**/*', 
             ],
     },
 }
