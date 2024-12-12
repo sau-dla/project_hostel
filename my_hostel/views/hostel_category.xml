@@ -7,7 +7,6 @@
                 <form string="hostel category Information">
                     <sheet>
                         <group>
-                            <button name="create_multiple_categories" string="Create Multiple Categories" type="object"/>
                             <button name="create_categories" string="Create Categories" type="object"/>
                         </group>
                         <group>
