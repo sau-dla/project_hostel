@@ -96,7 +96,7 @@ class HostelRoom(models.Model):
         self.change_state('closed')  
 
     def log_all_room_members(self):
-        hostel_room_obj = self.env['hostel.room.member']
+        hostel_room_obj = self.env['hostel.students']
         all_members = hostel_room_obj.search([])
         print("ALL MEMBERS:", all_members)
         return True
@@ -134,3 +134,9 @@ class HostelRoom(models.Model):
 
         rooms_with_both = rooms_with_kitchen & rooms_with_balcony 
         return rooms_with_both
+
+    def rooms_with_multiple_members(self):
+        def predicate(room):
+            return len(room.members) > 1
+
+        return self.search([]).filter(predicate)
