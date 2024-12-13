@@ -103,6 +103,10 @@ class HostelRoom(models.Model):
         print("ALL MEMBERS:", all_members)
         return True
 
+    def update_room_number(self):
+        self.ensure_one()
+        self.room_number = "RM002"
+
     def find_room(self):
         """
         Finds rooms that match the specified criteria.
@@ -149,3 +153,7 @@ class HostelRoom(models.Model):
                 return True
             return False
         return all_rooms.filtered(predicate) 
+
+    @api.model
+    def sort_rooms_by_rating(self, rooms):
+        return rooms.sorted(key='room_rating')
