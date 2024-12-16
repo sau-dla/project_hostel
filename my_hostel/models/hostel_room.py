@@ -55,6 +55,7 @@ class HostelRoom(models.Model):
     duration = fields.Integer(
         "Duration", compute="_compute_check_duration", inverse="_inverse_duration", help="Enter duration of living"
     )
+    room_rating = fields.Float('Room Rating')
 
     @api.depends("student_per_room", "student_ids")
     def _compute_check_availability(self):

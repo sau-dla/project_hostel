@@ -35,6 +35,7 @@
                             <field name="admission_date"/>
                             <field name="discharge_date"/>
                             <field name="duration"/>
+                            <field name="room_rating"/>
                         </group>
                         <notebook>
                             <page string="Students">
@@ -62,6 +63,7 @@
                     <field name="rent_amount"/>
                     <field name="student_ids" string= "registered users"/>
                     <field name="hostel_id"/>
+                    <field name="room_rating"/>
                     <field name="availability"/>
                 </list>
             </field>
