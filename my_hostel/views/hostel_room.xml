@@ -36,6 +36,7 @@
                             <field name="discharge_date"/>
                             <field name="duration"/>
                             <field name="room_rating"/>
+                            <field name="remarks"/>
                         </group>
                         <notebook>
                             <page string="Students">

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="view_hostel_terminate_form" model="ir.ui.view">
-            <field name="name">hostel Room form</field>
-            <field name="model">hostel.room</field>
-            <field name="inherit_id" ref="my_hostel.view_hostel_room_form"> </field>
-            <field name="arch" type="xml">
-                <form>   
-                    <field name="room_name" position="after">
-                        <field name="date_terminate"/>
-                    </field>
-                    
-                </form>
-            </field>
-        </record>
-
+    <record id="view_hostel_termination_form" model="ir.ui.view">
+        <field name="name">Hostel Termination Form</field>
+        <field name="model">hostel.termination</field>
+        <field name="arch" type="xml">
+            <form>
+                    <group>
+                        <field name="room_id"/>
+                        <field name="termination_date"/>
+                    </group>
+                <field name="reason"/>
+            </form>
+        </field>
+    </record>
 </odoo>

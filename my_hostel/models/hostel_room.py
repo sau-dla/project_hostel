@@ -16,6 +16,8 @@ class HostelRoom(models.Model):
 
     floor_number = fields.Char(
         'FLoor No.', help="Enter the floor number")
+    
+    remarks = fields.Text('Remarks')
                             
     state = fields.Selection([
         ('draft', 'Unavailable'),
@@ -158,3 +160,20 @@ class HostelRoom(models.Model):
     @api.model
     def sort_rooms_by_rating(self, rooms):
         return rooms.sorted(key='room_rating')
+
+    @api.model
+    def create(self, values):
+        if not self.env.user.has_groups('my_hostel.group_hostel_manager'):
+            if values.get('remarks'):
+                raise UserError(
+                    'You are not allowed to modify remarks'
+                )
+        return super(HostelRoom, self).create(values)
+
+    def write(self, values):
+        if not self.env.user.has_groups('my_hostel.group_hostel_manager'):
+            if values.get('remarks'):
+                raise UserError(
+                    'You are not allowed to modify remarks'
+                )
+        return super(HostelRoom, self).write(values)

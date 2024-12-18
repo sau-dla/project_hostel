@@ -1,6 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hostel_manager_id,access.hostel.manager,my_hostel.model_hostel_hostel,my_hostel.group_hostel_manager,1,1,1,1
-access_hostel_user_id,access.hostel.user,my_hostel.model_hostel_hostel,my_hostel.group_hostel_user,1,0,0,0
 access_hostel_room_manager_id,access.hostel.room,my_hostel.model_hostel_room,my_hostel.group_hostel_manager,1,1,1,1
 access_hostel_student_manager_id,access.hostel.student,my_hostel.model_hostel_student,my_hostel.group_hostel_manager,1,1,1,1
 access_hostel_amenities_manager_id,access.hostel.amenities,my_hostel.model_hostel_amenities,my_hostel.group_hostel_manager,1,1,1,1
@@ -8,3 +7,6 @@ access_hostel_category_manager_id,access.hostel.category,my_hostel.model_hostel_
 access_hostel_book_manager_id,access.hostel.book,my_hostel.model_res_partner,my_hostel.group_hostel_manager,1,1,1,1
 access_hostel_room_member_manager_id,access.hostel.room.member,my_hostel.model_hostel_room_member,my_hostel.group_hostel_manager,1,1,1,1
 access_hostel_room_copy_manager_id,access.hostel.room.copy,my_hostel.model_hostel_room_copy,my_hostel.group_hostel_manager,1,1,1,1
+access_hostel_user_id,access.hostel.user,my_hostel.model_hostel_hostel,my_hostel.group_hostel_user,1,0,0,0
+access_hostel_room_user_id,access.hostel.room,my_hostel.model_hostel_room,my_hostel.group_hostel_user,1,0,0,0
+ccess_hostel_category_user_id,access.hostel.category,my_hostel.model_hostel_category,my_hostel.group_hostel_user,1,0,0,0
