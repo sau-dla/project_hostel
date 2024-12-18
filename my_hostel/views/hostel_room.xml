@@ -5,12 +5,20 @@
             <field name="model">hostel.room</field>
             <field name="arch" type="xml">
                 <form string="hostel room Information">   
+                        <group> 
+                            <td style="padding-right:10px;">
+                                <button name="make_available" string="Make Available" type="object"/>
+                                <button name="make_closed" string="Make Borrowed" type="object"/>
+                                <field name="state" widget="statusbar"/>    
+                            </td>
+                        </group>
                     <header>
-                            <button name="make_available" string="Make Available" type="object"/>
-                            <button name="make_closed" string="Make Borrowed" type="object"/>
-                            <field name="state" widget="statusbar"/>
+                            <button name="update_room_number" string="Update Room Number" type="object"/>
                             <button name="log_all_room_members" string="Log Members" type="object"/>
                             <button name="get_rooms_with_kitchen_and_balcony" type="object" string="Rooms with Kitchen and Balcony"/>
+                            <button name="find_room" type="object" string="Find Room" /> 
+                            <button name="find_partner" type="object" string="Find Partner" />
+                            <button name="filter_rooms_with_multiple_members" type="object" string="Filter Rooms with Multiple Members" />
                     </header>
                     <sheet>
                         <group>
@@ -21,11 +29,13 @@
                             <field name="currency_id"/>
                             <field name="rent_amount"/>
                             <field name="hostel_id"/>
+                            <field name="category_id"/>
                             <field name="student_per_room"/>
                             <field name="availability"/>
                             <field name="admission_date"/>
                             <field name="discharge_date"/>
                             <field name="duration"/>
+                            <field name="room_rating"/>
                         </group>
                         <notebook>
                             <page string="Students">
@@ -51,7 +61,9 @@
                     <field name="floor_number"/>
                     <field name="state"/>
                     <field name="rent_amount"/>
+                    <field name="student_ids" string= "registered users"/>
                     <field name="hostel_id"/>
+                    <field name="room_rating"/>
                     <field name="availability"/>
                 </list>
             </field>

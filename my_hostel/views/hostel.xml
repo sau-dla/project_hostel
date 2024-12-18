@@ -56,7 +56,6 @@
               <field name="other_info"/>
             </group>
           <group>
-            <field name="category_id"/>
             <field name="description"/>
             <field name="ref_doc_id"/>
           </group>

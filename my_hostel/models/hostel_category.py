@@ -39,14 +39,3 @@ class HostelCategory(models.Model):
         }
         record = self.env['hostel.category'].create(parent_category_val)
         return record
-
-    def create_multiple_categories(self):
-        categ1 = {
-            'name': 'Category 1',
-            'description': 'Description for Category 1'
-        }
-        categ2 = {
-            'name': 'Category 2',
-            'description': 'Description for Category 2'
-        }
-        self.env['hostel.category'].create([categ1, categ2])

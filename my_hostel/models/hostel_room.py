@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import UserError
 from odoo.tools.translate import _
+from datetime import timedelta
 
 class HostelRoom(models.Model):
     _name = "hostel.room"
@@ -8,8 +9,7 @@ class HostelRoom(models.Model):
     _description = "Hostel Room Information" 
     _rec_name_search = ['room name', 'room state', 'rent amount']
     
-    room_name = fields.Char(
-        'Room Name')
+    room_name = fields.Char('Room Name')
 
     room_number = fields.Char(
         'Room No.')
@@ -32,6 +32,9 @@ class HostelRoom(models.Model):
     hostel_id = fields.Many2one("hostel.hostel", "hostel",
     help="Name of hostel")
 
+    category_id = fields.Many2one('hostel.category',
+    string="Category", help="Enter category")
+
     student_ids = fields.One2many("hostel.student", "room_id",
     string="Student", help="Enter student")
 
@@ -52,6 +55,7 @@ class HostelRoom(models.Model):
     duration = fields.Integer(
         "Duration", compute="_compute_check_duration", inverse="_inverse_duration", help="Enter duration of living"
     )
+    room_rating = fields.Float('Room Rating')
 
     @api.depends("student_per_room", "student_ids")
     def _compute_check_availability(self):
@@ -69,7 +73,6 @@ class HostelRoom(models.Model):
     def _inverse_duration(self):
         for record in self:
             if record.admission_date and record.duration:
-                from datetime import timedelta
                 new_discharge_date = record.admission_date + timedelta(days=record.duration)
                 if new_discharge_date != record.discharge_date:
                     record.discharge_date = new_discharge_date.strftime('%Y-%m-%d')
@@ -96,10 +99,14 @@ class HostelRoom(models.Model):
         self.change_state('closed')  
 
     def log_all_room_members(self):
-        hostel_room_obj = self.env['hostel.students']
+        hostel_room_obj = self.env['hostel.student']
         all_members = hostel_room_obj.search([])
         print("ALL MEMBERS:", all_members)
         return True
+
+    def update_room_number(self):
+        self.ensure_one()
+        self.room_number = "RM002"
 
     def find_room(self):
         """
@@ -107,10 +114,10 @@ class HostelRoom(models.Model):
         """
         domain = [
             '|', 
-                '&', ('name', 'ilike', 'Room 1'), ('category_id.name', 'ilike', 'Category 1'),
-                '&', ('name', 'ilike', 'Room 2'), ('category_id.name', 'ilike', 'Category 2')
-        ]
-        rooms = self.search(domain)
+                '&', ('room_name', 'ilike', 'Room 1'), ('category_id.name', 'ilike', 'Category 1'),
+                '&', ('room_name', 'ilike', 'Room 2'), ('category_id.name', 'ilike', 'Category 2')
+            ]
+        rooms = self.search(domain)           
         return rooms
 
     def find_partner(self):
@@ -135,8 +142,19 @@ class HostelRoom(models.Model):
         rooms_with_both = rooms_with_kitchen & rooms_with_balcony 
         return rooms_with_both
 
-    def rooms_with_multiple_members(self):
-        def predicate(room):
-            return len(room.members) > 1
+    def filter_rooms_with_multiple_members(self):
+        all_rooms = self.search([])
+        filtered_rooms = self.get_rooms_with_multiple_members(all_rooms)
+        return filtered_rooms
 
-        return self.search([]).filter(predicate)
+    @api.model
+    def get_rooms_with_multiple_members(self, all_rooms):
+        def predicate(room):
+            if len(room.student_ids) > 1:
+                return True
+            return False
+        return all_rooms.filtered(predicate) 
+
+    @api.model
+    def sort_rooms_by_rating(self, rooms):
+        return rooms.sorted(key='room_rating')

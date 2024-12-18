@@ -26,9 +26,6 @@ class Hostel(models.Model):
                             help="Enter more information")
     description = fields.Html('Description')
 
-    category_id = fields.Many2one('hostel.category',
-    string="Category", help="Enter category")
-
     hostel_rating = fields.Float('Average Hostel Rating',
                                 digits=(14, 4)) 
     display_name = fields.Char(string='Display name', compute='_compute_display_name', store=True)
