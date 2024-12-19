@@ -1,5 +1,11 @@
-from odoo import fields, models, api
+from odoo import fields, models
 
-class HostelTerminate(models.Model):
-    _inherit = 'hostel.room'
-    date_terminate = fields.Date('Date of Termination')
+class HostelTermination(models.Model):
+    _name = 'hostel.termination'
+    _description = 'Hostel Termination'
+
+    room_id = fields.Many2one('hostel.room', string='Room')
+    termination_date = fields.Date(string='Termination Date')
+    reason = fields.Text(string='Reason')
+
+    
