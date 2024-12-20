@@ -163,27 +163,6 @@ class HostelRoom(models.Model):
 
     @api.model
     def create(self, values):
-        if not self.env.user.has_group('my_hostel.group_hostel_manager'): 
-            if values.get('remarks'):
-                raise UserError(
-                    'You are not authorized to modify '
-                    'remarks'
-                )
+        if not self.env.user.has_group('my_hostel.group_hostel_manager') and values.get('remarks'):
+            raise UserError("You are not authorized to modify remarks")
         return super(HostelRoom, self).create(values)
-
-    def write(self, values):
-        if not self.env.user.has_group('my_hostel.group_hostel_manager'): 
-            if values.get('remarks'):
-                raise UserError(
-                    'You are not authorized to modify '
-                    'remarks'
-                )
-        return super(HostelRoom, self).write(values)
-
-    def write(self, values):
-        sup = super(self).write(values)
-        if self.env.context.get('MyModelLoopBreaker'):
-            return
-        self = self.with_context(MyModelLoopBreaker=True)
-        self.compute_things() 
-        return sup
