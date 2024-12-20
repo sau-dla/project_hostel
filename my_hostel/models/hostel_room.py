@@ -16,8 +16,6 @@ class HostelRoom(models.Model):
 
     floor_number = fields.Char(
         'FLoor No.', help="Enter the floor number")
-    
-    remarks = fields.Text('Remarks')
                             
     state = fields.Selection([
         ('draft', 'Unavailable'),
@@ -30,6 +28,8 @@ class HostelRoom(models.Model):
 
     rent_amount = fields.Monetary(
         'Rent Amount', help="Enter the floor number")
+
+    remarks = fields.Text('Remarks')
 
     hostel_id = fields.Many2one("hostel.hostel", "hostel",
     help="Name of hostel")
@@ -163,17 +163,6 @@ class HostelRoom(models.Model):
 
     @api.model
     def create(self, values):
-        if not self.env.user.has_groups('my_hostel.group_hostel_manager'):
-            if values.get('remarks'):
-                raise UserError(
-                    'You are not allowed to modify remarks'
-                )
+        if not self.env.user.has_group('my_hostel.group_hostel_manager') and values.get('remarks'):
+            raise UserError("You are not authorized to modify remarks")
         return super(HostelRoom, self).create(values)
-
-    def write(self, values):
-        if not self.env.user.has_groups('my_hostel.group_hostel_manager'):
-            if values.get('remarks'):
-                raise UserError(
-                    'You are not allowed to modify remarks'
-                )
-        return super(HostelRoom, self).write(values)

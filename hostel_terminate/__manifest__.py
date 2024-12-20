@@ -1,15 +1,14 @@
 {
-    'name': "Hostel_terminate",
-    'summary': "Manage hostel checkouts efficiently",
-    'description': """
-Efficient management of hostel checkouts. This module integrates with your existing Hostel Management system to calculate and manage checkout dates automatically based on guest categories and pre-defined durations.""",
-    'author': "sau",
-    'website': "http://www.example.com",
-    'category': 'Hostel Management',
-    'version': '18.1.0',
+    'name': "Hostel Terminate", 
+    'summary': "Manage terminate dates form hostel",
+    'author': "Sau",
     'license': 'AGPL-3',
+    'website': "http://www.example.com",
+    'category': 'other',
+    'version': '16.0.0',
     'depends': ['my_hostel'],
     'data': [
-        "views/hostel_terminate.xml"
-        ]
+        'views/hostel_room.xml',
+    ],
+
 }

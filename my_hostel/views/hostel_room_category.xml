@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="view_hostel_room_copy_form" model="ir.ui.view">
+        <record id="view_hostel_room_category_form" model="ir.ui.view">
             <field name="name">Hostel Room form</field>
-            <field name="model">hostel.room.copy</field>
+            <field name="model">hostel.room.category</field>
             <field name="arch" type="xml">
                 <form string="hostel room Information">
                     <sheet>
