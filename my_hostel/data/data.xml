@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <record forcecreate="True" id="decimal_point" model="decimal.precision">
+                <field name="name">Rating Value</field>
+                <field name="digits">3</field>
+            </record>
+
+            <record id="hostel_room" model="hostel.room">
+                <field name="room_name">Suite</field>
+            </record>
+
+            <record id="base.main_company" model="res.company">
+                <field name="name">Packt Publishing</field> 
+            </record>
+
+            <record id="res_partner_packt" model="res.partner">
+                <field name="name">Packt Publishing</field>
+                <field name="city">Birmingham</field>
+                <field name="country_id" ref="base.uk" />
+            </record>
+
+            <odoo noupdate="1">
+            
+            <record id="res_partner_packt" model="res.partner">
+                <field name="name">Packt Publishing</field>
+                <field name="city">Birmingham</field>
+                <field name="country_id" ref="base.uk"/>
+            </record>
+</odoo>
+    </data>
+</odoo>

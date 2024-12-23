@@ -7,7 +7,7 @@ class HostelRoom(models.Model):
     _name = "hostel.room"
     _inherit = ['base.archive']
     _description = "Hostel Room Information" 
-    _rec_name_search = ['room name', 'room state', 'rent amount']
+    _rec_name_search = ['room name']
     
     room_name = fields.Char('Room Name')
 
@@ -161,8 +161,15 @@ class HostelRoom(models.Model):
     def sort_rooms_by_rating(self, rooms):
         return rooms.sorted(key='room_rating')
 
+    # @api.model
+    # def create(self, values):
+    #     if not self.env.user.has_group('my_hostel.group_hostel_manager') and values.get('remarks'):
+    #         raise UserError("You are not authorized to modify remarks")
+    #     return super(HostelRoom, self).create(values)
+
     @api.model
-    def create(self, values):
-        if not self.env.user.has_group('my_hostel.group_hostel_manager') and values.get('remarks'):
-            raise UserError("You are not authorized to modify remarks")
-        return super(HostelRoom, self).create(values)
+    def _rec_names_search(self, name, args=None, operator='ilike', limit=100):
+        records = self.browse([]) 
+        if name:
+            records = self.search([('display_name', operator, name)], limit=limit)
+        return records.name_get()

@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="member_hda" model="res.partner">
+            <field name="name">Husen Daudi</field>
+        </record>
+
+        <record id="member_jvo" model="res.partner">
+            <field name="name">Jay Vora</field>
+        </record>
+        
+        <record id="hostel_room_1" model="hostel.room">
+            <field name="room_name">Suite</field>
+            <field name="room_number">RM001</field>
+        </record>
+    </data>
+</odoo>
