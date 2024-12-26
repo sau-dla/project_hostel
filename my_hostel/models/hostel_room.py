@@ -26,8 +26,7 @@ class HostelRoom(models.Model):
     currency_id = fields.Many2one('res.currency',
     string='Currency')
 
-    rent_amount = fields.Monetary(
-        'Rent Amount', help="Enter the floor number")
+    rent_amount = fields.Monetary('Rent Amount', help="Enter the floor number")
 
     remarks = fields.Text('Remarks')
 
@@ -173,3 +172,9 @@ class HostelRoom(models.Model):
         if name:
             records = self.search([('display_name', operator, name)], limit=limit)
         return records.name_get()
+
+    # @api.model
+    # def _update_room_price(self):
+    # all_rooms = self.search([])
+    #     for room in all_rooms:
+    #         room.cost_price += 10

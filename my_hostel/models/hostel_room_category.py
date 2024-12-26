@@ -1,11 +1,18 @@
-from odoo import fields, models, api, _
+from odoo import api, fields, models
 
-class HostelRoomCategory(models.Model):
-    _name = "hostel.room.category"
-    _inherit = "hostel.room"
-    _description = "Hostel Room Information Category"
 
-    amenity_ids = fields.Many2many("hostel.amenities",
-    "hostel_room_amenities_copy", "room_id", "amenitiy_id",
-    string="Amenities", domain="[('active', '=', True)]",
-    help="Select hostel room amenities")
+class RoomCategory(models.Model):
+    _name = 'hostel.room.category'
+    _description = "Hostel Room Category"
+
+    name = fields.Char('Category')
+    description = fields.Text('Description')
+    parent_id = fields.Many2one(
+        'hostel.room.category',
+        string='Parent Category',
+        ondelete='restrict',
+        index=True
+    )
+    child_ids = fields.One2many(
+        'hostel.room.category', 'parent_id',
+        string='Child Categories')

@@ -8,7 +8,7 @@
     'version': '16.0.0',
     'depends': ['my_hostel'],
     'data': [
-        'views/hostel_room.xml',
+        'views/hostel_terminate.xml',
     ],
 
 }

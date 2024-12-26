@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="view_hostel_room_category_form" model="ir.ui.view">
-            <field name="name">Hostel Room category form</field>
-            <field name="model">hostel.room</field>
+
+    <record id="hostel_room_category_view_form" model="ir.ui.view">
+        <field name="name">Hostel Room Categories Form</field>
+        <field name="model">hostel.room.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                    <group>
+                        <field name="parent_id"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="child_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hostel_room_category_view_list" model="ir.ui.view">
+            <field name="name">Hostel Room form</field>
+            <field name="model">hostel.room.category</field>
             <field name="arch" type="xml">
-                <form string="hostel room Information">
-                    <sheet>
-                        <group>
-                            <field name="amenity_ids"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+        <list>  
+            <field name="name"/>
+            <field name="description"/>
+        </list>
+        </field>
+    </record>
+
 </odoo>

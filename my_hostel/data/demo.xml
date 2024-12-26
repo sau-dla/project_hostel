@@ -1,4 +1,6 @@
-<odoo>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
     <data>
         <record id="member_hda" model="res.partner">
             <field name="name">Husen Daudi</field>
@@ -11,6 +13,8 @@
         <record id="hostel_room_1" model="hostel.room">
             <field name="room_name">Suite</field>
             <field name="room_number">RM001</field>
+            <field name="student_per_room">4</field>
+            <field name="student_ids" eval="[(6, 0, [ref('author_hda'), ref('author_jvo')])]"/>
         </record>
     </data>
 </odoo>
