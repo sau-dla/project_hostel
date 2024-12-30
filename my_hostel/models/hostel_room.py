@@ -175,6 +175,6 @@ class HostelRoom(models.Model):
 
     # @api.model
     # def _update_room_price(self):
-    # all_rooms = self.search([])
-    #     for room in all_rooms:
-    #         room.cost_price += 10
+    #         all_rooms = self.search([])
+    #         for room in all_rooms:
+    #                 room.cost_price += 10
