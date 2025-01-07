@@ -20,16 +20,28 @@ class HostelStudent(models.Model):
     hostel_id = fields.Many2one("hostel.hostel", related='room_id.hostel_id')
     partner_id = fields.Many2one('res.partner', ondelete='cascade') 
 
+    status = fields.Selection([("draft", "Draft"),
+        ("reservation", "Reservation"), ("pending", "Pending"),
+        ("paid", "Done"),("discharge", "Discharge"), ("cancel",
+        "Cancel")],
+    string="Status", copy=False, default="draft",
+    help="State of the student hostel")
+
     def action_assign_room(self):
         self.ensure_one()
         if self.status != "paid":
-            raise UserError(_("You can't assign a room if it's not paid."))
+            raise UserError(("You can't assign a room if it's not paid."))
         room_as_superuser = self.env['hostel.room'].sudo()
-
         room_rec = room_as_superuser.create({
-            "name": "Room A-103",
-            "room_no": "A-103",
-            "floor_no": 1,
-            "room_category_id": 37,  
+            "room_name": "Room A-103",
+            "room_number": "A-103",
+            "floor_number": 1, 
             "hostel_id": self.hostel_id.id,
+            "student_per_room" : 4,
         })
+        student_vals = {'name': self.name, 'room_id': room_rec.id}
+        self.create(student_vals)
+
+    def action_remove_room(self):
+        if self.env.context.get("is_hostel_room"):
+            self.room_id = False

@@ -21,7 +21,8 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="action_assign_room"  string="Asignar Habitación"   type="object" class="btn-primary"/>
+                        <button name="action_assign_room" string="Asignar Habitación" type="object" class="btn-primary" widget="statusbar"/>
+                        <button name="action_remove_room" string="Remove Room Members" type="object" class="btn-primary"/>
                     </header>
                     <sheet>
                         <group>
