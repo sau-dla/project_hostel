@@ -7,3 +7,4 @@ from . import hostel_category
 from . import hostel_book
 from . import hostel_room_category
 from . import hostel_room_members
+from . import assign_room_student_wizard

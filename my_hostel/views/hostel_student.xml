@@ -21,16 +21,18 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="action_assign_room" string="Asignar Habitación" type="object" class="btn-primary" widget="statusbar"/>
-                        <button name="action_remove_room" string="Remove Room Members" type="object" class="btn-primary"/>
+                        <button name="action_assign_room" type="object" class="btn-primary oe_statut_button" string="Assign Room" /> 
+                        <button name="action_remove_room" string="Remove Room Members" type="object"/> 
+                        <field name="status" widget="statusbar"/>  
                     </header>
                     <sheet>
                         <group>
                             <group>
-                                <field name="status"></field>
+                                <field name="status"/>
                                 <field name="name"/>
                                 <field name="gender"/>
                                 <field name="date_of_birth"/>
+                                <field name="admission_date"/>
                             </group>
                             <group>
                                 <field name="room_id"/>

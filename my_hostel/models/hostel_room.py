@@ -3,7 +3,7 @@ from odoo.exceptions import UserError
 from odoo.tools.translate import _
 from datetime import timedelta
 
-class HostelRoom(models.Model):
+class HostelRoom(models.Model): 
     _name = "hostel.room"
     _inherit = ['base.archive']
     _description = "Hostel Room Information" 
@@ -166,12 +166,12 @@ class HostelRoom(models.Model):
     #         raise UserError("You are not authorized to modify remarks")
     #     return super(HostelRoom, self).create(values)
 
-    @api.model
-    def _rec_names_search(self, name, args=None, operator='ilike', limit=100):
-        records = self.browse([]) 
-        if name:
-            records = self.search([('display_name', operator, name)], limit=limit)
-        return records.name_get()
+    # @api.model
+    # def _rec_names_search(self, name, args=None, operator='ilike', limit=100):
+    #     records = self.browse([])
+    #     if name:
+    #         records = self.search([('display_name', operator, name)], limit=limit)
+    #     return records.name_get()
 
     # @api.model
     # def _update_room_price(self):
