@@ -14,4 +14,32 @@
                 </list>
             </field>
         </record>
+
+        <record id="view_hostel_student_form" model="ir.ui.view">
+            <field name="name">Hostel Student Form</field>
+            <field name="model">hostel.student</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_assign_room" string="Asignar Habitación" type="object" class="btn-primary" widget="statusbar"/>
+                        <button name="action_remove_room" string="Remove Room Members" type="object" class="btn-primary"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="status"></field>
+                                <field name="name"/>
+                                <field name="gender"/>
+                                <field name="date_of_birth"/>
+                            </group>
+                            <group>
+                                <field name="room_id"/>
+                                <field name="hostel_id"/>
+                                <field name="partner_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 </odoo>

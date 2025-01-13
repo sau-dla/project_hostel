@@ -11,7 +11,7 @@ Efficient management of all residential facilities in the school.
     'license': 'AGPL-3',
     'depends': ['base'],
     'data': [
-        'data/hostel_data.xml',
+        'data/data.xml',
         'security/hostel_security.xml',
         'security/ir.model.access.csv',
         'views/hostel.xml',
@@ -24,6 +24,10 @@ Efficient management of all residential facilities in the school.
         'views/hostel_room_members.xml',
         'views/action.xml',
         'views/menu.xml',
+    
+    ],
+    'demo': [
+            'data/demo.xml',
     ],
     'assets': {
         'web.assets_backend': [
