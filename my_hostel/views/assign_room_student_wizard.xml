@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="assign_room_student_wizard_list_view" model="ir.ui.view">
+                <field name="name">Assign Room Student - List View</field>
+                <field name="model">assign.room.student.wizard</field>
+                <field name="arch" type="xml">
+                    <list string="Assign Room Students">
+                        <field name="name_student"/>  
+                        <field name="hostel_id" string="Hostel" />
+                        <field name="admission_date" string="Admission Date" />
+                        <button type="object" name="add_room_in_student" string="Assign Room" class="oe_highlight" />  
+                    </list>
+                </field>
+        </record>
+
+        <record id="assign_room_student_wizard_form_view" model="ir.ui.view">
+            <field name="name">Assign Room Student - Form View</field>
+            <field name="model">assign.room.student.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Assign Room to Student">
+                    <footer>
+                        <button type="object" name="add_room_in_student" string="Assign Room" class="oe_highlight" />
+                        <button type="cancel" string="Cancel" special="cancel" />
+                    </footer>
+                    <group>
+                        <field name="name_student"/>  
+                        <field name="hostel_id" string="Hostel" />
+                        <field name="admission_date" string="Admission Date" />
+                        <button type="object" name="add_room_in_student" string="Assign Room" class="oe_highlight" />  
+                        <field name="room_id" string="Room" required="True" />
+                    </group>
+                </form>
+            </field>
+        </record>
+</odoo>

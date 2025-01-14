@@ -22,6 +22,7 @@ Efficient management of all residential facilities in the school.
         'views/hostel_category.xml',
         'views/hostel_book.xml',
         'views/hostel_room_members.xml',
+        'views/assign_room_student_wizard.xml',
         'views/action.xml',
         'views/menu.xml',
     
