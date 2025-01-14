@@ -31,13 +31,13 @@ class Hostel(models.Model):
     display_name = fields.Char(string='Display name', compute='_compute_display_name', store=True)
     currency_id = fields.Many2one('res.currency', string='currency')
     
-    @api.depends('hostel_code')
-    def _compute_display_name(self):
-            for record in self:
-                name = record.name
-            if record.hostel_code:
-                name = f'{name} ({record.hostel_code})'
-            record.display_name = name
+    # @api.depends('hostel_code')
+    # def _compute_display_name(self):
+    #         for record in self:
+    #             name = record.name
+    #         if record.hostel_code:
+    #             name = f'{name} ({record.hostel_code})'
+    #         record.display_name = name
     
     @api.model
     def _referencable_models(self):
