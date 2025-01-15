@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="view_hostel_room_availability_list" model="ir.ui.view">
-            <field name="name">Hostel room availability list</field>
+    <data>
+        <record id="view_hostel_room_availability_pivot" model="ir.ui.view">
+            <field name="name">hostel room availability Pivot</field>
             <field name="model">hostel.room.availability</field>
             <field name="arch" type="xml">
-                <list>
-                        <field name="room_id"/>
-                        <field name="student_per_room"/>
-                        <field name="availability"/>
-                        <field name="amount"/>
-                </list>
+                <pivot string="Hostel Room Availability">
+                    <field name="room_id" type="row"/>  
+                    <field name="availability" type="measure"/>  
+                </pivot>
             </field>
         </record>
+    </data>
 </odoo>

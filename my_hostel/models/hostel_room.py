@@ -2,7 +2,6 @@ from odoo import models, fields, api
 from odoo.exceptions import UserError
 from odoo.tools.translate import _
 from datetime import timedelta
-from odoo.tests.common import Form
 from odoo import models, fields, api
 from odoo.exceptions import UserError
 from odoo.tools.translate import _
