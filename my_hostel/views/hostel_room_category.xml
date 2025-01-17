@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="hostel_room_category_view_list" model="ir.ui.view">
+            <field name="name">Hostel Room form</field>
+            <field name="model">hostel.room.category</field>
+            <field name="arch" type="xml">
+        <list>  
+            <field name="name"/>
+            <field name="description"/>
+        </list>
+        </field>
+    </record>
 
     <record id="hostel_room_category_view_form" model="ir.ui.view">
         <field name="name">Hostel Room Categories Form</field>
@@ -22,15 +32,15 @@
         </field>
     </record>
 
-
-    <record id="hostel_room_category_view_list" model="ir.ui.view">
-            <field name="name">Hostel Room form</field>
-            <field name="model">hostel.room.category</field>
-            <field name="arch" type="xml">
-        <list>  
-            <field name="name"/>
-            <field name="description"/>
-        </list>
+    <record id="hostel_room_category_view_kanban" model="ir.ui.view">
+        <field name="name">Hostel Room Categories kanban</field>
+        <field name="model">hostel.room.category</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" sample="1">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="parent_id"/>
+            </kanban>
         </field>
     </record>
 

@@ -2,6 +2,10 @@ from odoo import models, fields, api
 from odoo.exceptions import UserError
 from odoo.tools.translate import _
 from datetime import timedelta
+from odoo import models, fields, api
+from odoo.exceptions import UserError
+from odoo.tools.translate import _
+from datetime import timedelta
 
 class HostelRoom(models.Model): 
     _name = "hostel.room"
@@ -178,3 +182,11 @@ class HostelRoom(models.Model):
     #         all_rooms = self.search([])
     #         for room in all_rooms:
     #                 room.cost_price += 10
+
+    # def return_room(self):
+    #         self.ensure_one()
+    #         wizard = self.env['assign.room.student.wizard']
+    #         with Form(wizard) as return_form:
+    #             return_form.room_id = self.env.ref('my_hostel.room1') 
+    #             record = return_form.save()
+    #             record.with_context(active_id=self.id).add_room_in_student()
