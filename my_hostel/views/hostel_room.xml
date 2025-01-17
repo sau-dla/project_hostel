@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+        <record id="hostel_room_list" model="ir.ui.view">
+            <field name="name">hostel.room.list</field>
+            <field name="model">hostel.room</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="room_name"/>
+                    <field name="room_number"/>
+                    <field name="floor_number"/>
+                    <field name="state"/>
+                    <field name="rent_amount"/>
+                    <field name="student_ids" string= "registered users"/>
+                    <field name="hostel_id"/>
+                    <field name="room_rating"/>
+                    <field name="availability"/>
+                </list>
+            </field>
+        </record>
+
         <record id="view_hostel_room_form" model="ir.ui.view">
             <field name="name">hostel.Room.form</field>
             <field name="model">hostel.room</field>
@@ -44,7 +63,7 @@
                                 <field name="student_ids"/>
                             </page>
                             <page string="Amenities">
-                                <field name="amenity_ids" widget="many2many_tags" domain="[('hostel_id', '=', True)]" />
+                                <field name="amenity_ids"/>
                             </page>
                         </notebook>
                     </sheet>
@@ -52,22 +71,17 @@
             </field>
         </record>
 
-
-        <record id="hostel_room_list" model="ir.ui.view">
-            <field name="name">hostel.room.list</field>
+        <record id="hostel_room_view_search" model="ir.ui.view">
+            <field name="name">hostel.room.search</field>
             <field name="model">hostel.room</field>
             <field name="arch" type="xml">
-                <list>
+                <search>
                     <field name="room_name"/>
-                    <field name="room_number"/>
-                    <field name="floor_number"/>
                     <field name="state"/>
-                    <field name="rent_amount"/>
-                    <field name="student_ids" string= "registered users"/>
-                    <field name="hostel_id"/>
-                    <field name="room_rating"/>
-                    <field name="availability"/>
-                </list>
+                    <searchpanel>
+                        <field name="state" expand="1" select="multi" icon="fa-check-square-o" enable_counters="1"/>
+                    </searchpanel>
+                </search>
             </field>
         </record>
 

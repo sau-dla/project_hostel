@@ -1,0 +1,873 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* my_hostel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 20:03+0000\n"
+"PO-Revision-Date: 2025-01-17 20:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_student__gender__other
+msgid "31 type of gay"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_res_partner__is_hostel_rector
+#: model:ir.model.fields,help:my_hostel.field_res_users__is_hostel_rector
+msgid "Activate if the following person is the hostel director"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_student__active
+msgid "Activate/Deactivate hostel record"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_hostel__active
+msgid "Activate/Deactivate hostel registration"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_amenities__active
+msgid "Activate/Deactivate whether the amenity should begiven or not"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_base_archive__active
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_amenities__active
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__active
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__active
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__active
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__active
+msgid "Active"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_assign_room_student_wizard__admission_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__admission_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__admission_date
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_assign_room_student_wizard_form
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_assign_room_student_wizard_list
+msgid "Admission Date"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.res_config_settings_view_form
+msgid "Allow users to hostel user"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__amenity_ids
+#: model_terms:ir.actions.act_window,help:my_hostel.action_hostel_amenities
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "Amenities"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_availability__amount
+msgid "Amount"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_assign_room_student_wizard_form
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_student_form
+msgid "Assign Room"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_assign_room_student_wizard_list
+msgid "Assign Room Students"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_assign_room_student_wizard
+msgid "Assign room student information"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.action_assign_room_student_wizard
+msgid "Assign room student wizard"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_res_partner__assign_room_ids
+#: model:ir.model.fields,field_description:my_hostel.field_res_users__assign_room_ids
+msgid "Assigned Rooms"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__availability
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_availability__availability
+msgid "Availability"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_room__state__available
+msgid "Available"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__hostel_rating
+msgid "Average Hostel Rating"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_base_archive
+msgid "Base Archive"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.actions.act_window,help:my_hostel.action_hostel_book
+msgid "Book"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_student__status__cancel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_assign_room_student_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__category_id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_category__name
+#: model_terms:ir.actions.act_window,help:my_hostel.action_hostel_category
+msgid "Category"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__mobile
+msgid "Cellular"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__checkin_date
+msgid "Checkin date"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__checkout_date
+msgid "Checkout date"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__child_ids
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_category__child_ids
+msgid "Child Categories"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__city
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_form_view
+msgid "City"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_room__state__closed
+msgid "Closed"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__hostel_code
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_form_view
+msgid "Code"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de configuration"
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__country_id
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_form_view
+msgid "Country"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_category_form
+msgid "Create Categories"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.actions.act_window,help:my_hostel.action_hostel
+msgid "Create a hostel"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.actions.act_window,help:my_hostel.action_hostel_room
+#: model_terms:ir.actions.act_window,help:my_hostel.action_hostel_room_category
+msgid "Create a room"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_assign_room_student_wizard__create_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_amenities__create_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__create_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__create_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__create_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_category__create_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__create_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_assign_room_student_wizard__create_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_amenities__create_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__create_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__create_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__create_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_category__create_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__create_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__date_of_birth
+msgid "Date of Birth"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_assign_room_student_wizard__admission_date
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__admission_date
+msgid "Date of admission in hostel"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__discharge_date
+msgid "Date on which student discharge"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__description
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_category__description
+msgid "Description"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_student__status__discharge
+msgid "Discharge"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__discharge_date
+msgid "Discharge Date"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_assign_room_student_wizard__display_name
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_amenities__display_name
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__display_name
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__display_name
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_availability__display_name
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_category__display_name
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__display_name
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__display_name
+msgid "Display name"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_student__status__paid
+msgid "Done"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_student__status__draft
+msgid "Draft"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__duration
+msgid "Duration"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__email
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__email
+msgid "Email"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__category_id
+msgid "Enter category"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__duration
+msgid "Enter duration of living"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_hostel__other_info
+msgid "Enter more information"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__student_ids
+msgid "Enter student"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__floor_number
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__rent_amount
+msgid "Enter the floor number"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__floor_number
+msgid "FLoor No."
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_student__gender__female
+msgid "Female"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "Filter Rooms with Multiple Members"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "Find Partner"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "Find Room"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__name
+msgid "Full name"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__gender
+msgid "Gender"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_form_view
+msgid "Hostal"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.action_hostel
+#: model:ir.ui.menu,name:my_hostel.hostel_main_menu
+#: model:ir.ui.menu,name:my_hostel.hostel_type_menu
+#: model_terms:ir.ui.view,arch_db:my_hostel.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_assign_room_student_wizard_form
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_assign_room_student_wizard_list
+msgid "Hostel"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_hostel_amenities
+msgid "Hostel Amenities"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_res_partner__is_hostel_rector
+#: model:ir.model.fields,field_description:my_hostel.field_res_users__is_hostel_rector
+msgid "Hostel Director"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.module.category,name:my_hostel.module_category_hostel
+msgid "Hostel Management"
+msgstr ""
+
+#. module: my_hostel
+#: model:res.groups,name:my_hostel.group_hostel_manager
+msgid "Hostel Manager"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.action_hostel_room_availability
+#: model:ir.model,name:my_hostel.model_hostel_room_availability
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_availability_pivot
+msgid "Hostel Room Availability"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_hostel_room_category
+msgid "Hostel Room Category"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_hostel_room
+msgid "Hostel Room Information"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_hostel_room_member
+msgid "Hostel Room Member"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_hostel_student
+msgid "Hostel Stundent Information"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_res_config_settings__group_hostel_user
+msgid "Hostel User"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.action_hostel_amenities
+#: model:ir.ui.menu,name:my_hostel.hostel_amenities_menu
+msgid "Hostel amenities"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.action_hostel_book
+#: model:ir.ui.menu,name:my_hostel.hostel_book_menu
+msgid "Hostel book"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.action_hostel_category
+#: model:ir.ui.menu,name:my_hostel.hostel_category_menu
+msgid "Hostel category"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_hostel_category
+msgid "Hostel category Information"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__name
+msgid "Hostel name"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.action_hostel_room
+#: model:ir.ui.menu,name:my_hostel.hostel_room_menu
+msgid "Hostel room"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.action_hostel_room_category
+#: model:ir.ui.menu,name:my_hostel.hostel_room_category_menu
+msgid "Hostel room category"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.action_hostel_room_member
+#: model:ir.ui.menu,name:my_hostel.hostel_room_member_menu
+msgid "Hostel room member"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.action_hostel_student
+#: model:ir.ui.menu,name:my_hostel.hostel_student_menu
+msgid "Hostel student"
+msgstr ""
+
+#. module: my_hostel
+#: model:res.groups,name:my_hostel.group_hostel_user
+msgid "Hostel user"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_assign_room_student_wizard__id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_amenities__id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_availability__id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_category__id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__id
+msgid "ID"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__image
+msgid "Image"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model,name:my_hostel.model_hostel_hostel
+msgid "Information about the hostel"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_assign_room_student_wizard__write_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_amenities__write_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__write_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__write_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__write_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_category__write_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__write_uid
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_assign_room_student_wizard__write_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_amenities__write_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__write_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__write_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__write_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_category__write_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__write_date
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "Log Members"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "Make Available"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "Make Borrowed"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_student__gender__male
+msgid "Male"
+msgstr ""
+
+#. module: my_hostel
+#. odoo-python
+#: code:addons/my_hostel/models/hostel_room.py:0
+msgid "Moving from %s to %s is not allowed"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_amenities__name
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_form_view
+msgid "Name"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_assign_room_student_wizard__hostel_id
+#: model:ir.model.fields,help:my_hostel.field_hostel_amenities__hostel_id
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__hostel_id
+#: model:ir.model.fields,help:my_hostel.field_hostel_student__hostel_id
+msgid "Name of hostel"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__name
+msgid "Name_category"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_res_partner__count_assign_room
+#: model:ir.model.fields,field_description:my_hostel.field_res_users__count_assign_room
+msgid "Number of Authorized Books"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__other_info
+msgid "Other Information"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__parent_id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_category__parent_id
+msgid "Parent Category"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_student__status__pending
+msgid "Pending"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__phone
+msgid "Phone"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_amenities__name
+msgid "Provided Hostel Amenity"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__ref_doc_id
+msgid "Reference document"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__remarks
+msgid "Remarks"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_student_form
+msgid "Remove Room Members"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__rent_amount
+msgid "Rent Amount"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_student__status__reservation
+msgid "Reservation"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_assign_room_student_wizard__room_id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_availability__room_id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__room_id
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_assign_room_student_wizard_form
+msgid "Room"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__room_name
+msgid "Room Name"
+msgstr "Nom de la chambre"
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__room_number
+msgid "Room No."
+msgstr "Numéros de chambre"
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__room_rating
+msgid "Room Rating"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__availability
+msgid "Room availability in hostel"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "Rooms with Kitchen and Balcony"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_assign_room_student_wizard__room_id
+#: model:ir.model.fields,help:my_hostel.field_hostel_student__room_id
+msgid "Select hostel room"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__amenity_ids
+msgid "Select hostel room amenities"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.actions.act_window,name:my_hostel.hostel_config_settings_action
+#: model:ir.ui.menu,name:my_hostel.hostel_setting_menu
+msgid "Settings"
+msgstr ""
+
+#. module: my_hostel
+#. odoo-python
+#: code:addons/my_hostel/models/hostel.py:0
+msgid "Something went wrong while sending data"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__state_id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__state
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_form_view
+msgid "State"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__status
+msgid "Status"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__street
+msgid "Street"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__street2
+msgid "Street 2"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_form_view
+msgid "Street 2..."
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_form_view
+msgid "Street..."
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__student_ids
+msgid "Student"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_assign_room_student_wizard__name_student
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__name
+msgid "Student Name"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__student_per_room
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_availability__student_per_room
+msgid "Student Per Room"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_student__gender
+msgid "Student's gender"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.actions.act_window,help:my_hostel.action_hostel_student
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "Students"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,help:my_hostel.field_hostel_room__student_per_room
+msgid "Students allocated per room"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields.selection,name:my_hostel.selection__hostel_room__state__draft
+msgid "Unavailable"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "Update Room Number"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__zip
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_form_view
+msgid "Zip code"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_form_view
+msgid "address"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.ui.menu,name:my_hostel.assign_room_student_wizard_menu
+msgid "assign room student wizard"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.actions.act_window,help:my_hostel.action_assign_room_student_wizard
+msgid "assign_room_student"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_hostel__currency_id
+msgid "currency"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_assign_room_student_wizard__hostel_id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_amenities__hostel_id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room__hostel_id
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_student__hostel_id
+msgid "hostel"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_amenities_form
+msgid "hostel amenities Information"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_book_form
+msgid "hostel book Information"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_category_form
+msgid "hostel category Information"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_form
+msgid "hostel room Information"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.ui.menu,name:my_hostel.hostel_room_availability_menu
+msgid "hostel room availability"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.view_hostel_room_members_form
+msgid "hostel room member Information"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_category__description
+msgid "information"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.ui.view,arch_db:my_hostel.hostel_room_list
+msgid "registered users"
+msgstr ""
+
+#. module: my_hostel
+#: model:ir.model.fields,field_description:my_hostel.field_hostel_room_member__room_id
+msgid "room"
+msgstr ""
+
+#. module: my_hostel
+#: model_terms:ir.actions.act_window,help:my_hostel.action_hostel_room_member
+msgid "room members"
+msgstr ""

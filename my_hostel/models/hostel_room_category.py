@@ -16,3 +16,5 @@ class RoomCategory(models.Model):
     child_ids = fields.One2many(
         'hostel.room.category', 'parent_id',
         string='Child Categories')
+
+        
