@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="hostel_room_category_view_list" model="ir.ui.view">
-            <field name="name">Hostel Room form</field>
+            <field name="name">Hostel Room List</field>
             <field name="model">hostel.room.category</field>
             <field name="arch" type="xml">
         <list>  
@@ -33,14 +33,54 @@
     </record>
 
     <record id="hostel_room_category_view_kanban" model="ir.ui.view">
-        <field name="name">Hostel Room Categories kanban</field>
+        <field name="name">Hostel Room Categories Kanban</field>
         <field name="model">hostel.room.category</field>
         <field name="arch" type="xml">
             <kanban class="o_kanban_mobile" sample="1">
-                <field name="name"/>
-                <field name="description"/>
+                <templates>
+                    <t t-name="kanban-box">  <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <field name="name" class="oe_kanban_record_title"/>
+                                <field name="description"/>
+                                <field name="parent_id"/>
+                                </div>
+                        </div>
+                    </t>
+                </templates>
+                <field name="name"/>  </kanban>
+        </field>
+    </record>
+
+    <record id="hostel_room_category_view_calendar" model="ir.ui.view">
+        <field name="name">Hostel Room Categories Calendar</field>
+        <field name="model">hostel.room.category</field>
+        <field name="arch" type="xml">
+            <calendar date_start="date_assign" date_stop="date_end" color="parent_id">
+                <field name="name" />
+                <field name="parent_id" />
+            </calendar>
+        </field>
+    </record>
+
+        <record id="hostel_room_category_view_graph" model="ir.ui.view">
+        <field name="name">Hostel Room Categories Graph</field>
+        <field name="model">hostel.room.category</field>
+        <field name="arch" type="xml">
+            <graph type="bar">
                 <field name="parent_id"/>
-            </kanban>
+                <field name="child_ids"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="hostel_room_category_view_pivot" model="ir.ui.view">
+        <field name="name">Hostel Room Categories Pivot</field>
+        <field name="model">hostel.room.category</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="parent_id" type="row"/>
+                <field name="name" type="col"/>
+            </pivot>
         </field>
     </record>
 

@@ -71,18 +71,18 @@
             </field>
         </record>
 
-        <record id="hostel_room_view_search" model="ir.ui.view">
-            <field name="name">hostel.room.search</field>
-            <field name="model">hostel.room</field>
-            <field name="arch" type="xml">
-                <search>
-                    <field name="room_name"/>
-                    <field name="state"/>
-                    <searchpanel>
-                        <field name="state" expand="1" select="multi" icon="fa-check-square-o" enable_counters="1"/>
-                    </searchpanel>
-                </search>
-            </field>
-        </record>
+    <record id="hostel_room_view_search" model="ir.ui.view">
+        <field name="model">hostel.room</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="room_name"/>
+                <field name="room_number"/>
+                <field name="state"/>
+                <searchpanel>
+                    <field name="state" expand="1" select="multi" icon="fa-check-square-o" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
 
 </odoo>
