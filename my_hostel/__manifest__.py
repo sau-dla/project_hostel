@@ -13,6 +13,7 @@ Efficient management of all residential facilities in the school.
     'data': [
         'data/data.xml',
         'security/hostel_security.xml',
+        'security/security_rules.xml',
         'security/ir.model.access.csv',
         'views/hostel.xml',
         'views/hostel_room.xml',

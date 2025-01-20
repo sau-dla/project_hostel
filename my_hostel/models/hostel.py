@@ -30,7 +30,11 @@ class Hostel(models.Model):
                                 digits=(14, 4)) 
     display_name = fields.Char(string='Display name', compute='_compute_display_name', store=True)
     currency_id = fields.Many2one('res.currency', string='currency')
-    
+
+    is_public = fields.Boolean(groups='my_hostel.group_hostel_manager')
+    notes = fields.Text(groups="my_hostel.group_hostel_manager")
+    date_start = fields.Date('Start Date', groups='my_hostel.group_start_date')
+
     # @api.depends('hostel_code')
     # def _compute_display_name(self):
     #         for record in self:
