@@ -11,7 +11,7 @@ access_assign_room_student_wizard_manager_id,access.assign.room.student.wizard,m
 access_hostel_room_availability_manager_id,access.hostel.room.availability,my_hostel.model_hostel_room_availability,my_hostel.group_hostel_manager,1,1,1,1
 access_hostel_user_id,access.hostel.user,my_hostel.model_hostel_hostel,my_hostel.group_hostel_user,1,0,0,0
 access_hostel_room_user_id,access.hostel.room,my_hostel.model_hostel_room,my_hostel.group_hostel_user,1,0,0,0
-ccess_hostel_category_user_id,access.hostel.category,my_hostel.model_hostel_category,my_hostel.group_hostel_user,1,0,0,0
+access_hostel_category_user_id,access.hostel.category,my_hostel.model_hostel_category,my_hostel.group_hostel_user,1,0,0,0
 access_hostel_student_user_id,access.hostel.student,my_hostel.model_hostel_student,my_hostel.group_hostel_user,1,0,0,0
 access_hostel_amenities_user_id,access.hostel.amenities,my_hostel.model_hostel_amenities,my_hostel.group_hostel_user,1,0,0,0
 access_hostel_book_user_id,access.hostel.book,my_hostel.model_res_partner,my_hostel.group_hostel_user,1,0,0,0

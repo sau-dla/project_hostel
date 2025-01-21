@@ -2,7 +2,7 @@
 <odoo>
   
       <record id="view_hostel_list" model="ir.ui.view">
-          <field name="name">hostel.hostel.list</field>
+          <field name="name">Hostel list</field>
           <field name="model">hostel.hostel</field>
           <field name="arch" type="xml">
             <list>
@@ -15,10 +15,13 @@
       </record>
 
       <record id="view_hostel_form_view" model="ir.ui.view">
-          <field name="name">hostel.hostel.form.view</field>
+          <field name="name">Hostel form view</field>
           <field name="model">hostel.hostel</field>
           <field name="arch" type="xml">
             <form string="Hostal">
+                <header groups="my_hostel.group_hostel_manager">
+                  <button name="add_details" string="Add Details" type="object"/>
+                </header>
               <sheet>
                 <div class="oe_title">
                   <h3>
@@ -38,6 +41,7 @@
                   </h3>
                 </div>
                   <group>
+                    <field name="details_added"/>
                     <field name="is_public"/>
                     <field name="date_start"/>
                     <label for="street" string="address"/>
@@ -70,10 +74,11 @@
           <field name="name">Hostel Search</field>
           <field name="model">hostel.hostel</field>
           <field name="arch" type="xml">
-              <search>
+              <search string="Search Hostel">
                   <field name="name"/>
                   <field name="hostel_code"/>
               </search>
           </field>
       </record>
+
 </odoo>

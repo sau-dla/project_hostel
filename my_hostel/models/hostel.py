@@ -35,6 +35,13 @@ class Hostel(models.Model):
     notes = fields.Text(groups="my_hostel.group_hostel_manager")
     date_start = fields.Date('Start Date', groups='my_hostel.group_start_date')
 
+    details_added = fields.Text(string="Details", groups='my_hostel.group_hostel_manager')
+
+    def add_details(self):
+        self.ensure_one()
+        message = f"Details are added by: {self.env.user.name}"
+        self.sudo().write({'details_added': message})
+
     # @api.depends('hostel_code')
     # def _compute_display_name(self):
     #         for record in self:

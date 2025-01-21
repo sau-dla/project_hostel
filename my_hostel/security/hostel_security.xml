@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
         <record id="module_category_hostel" model="ir.module.category">
             <field name="name">Hostel Management</field>
             <field name="sequence">31</field>
@@ -21,5 +22,6 @@
             <field name="name">Hostel: Start date feature</field>
             <field name="category_id" ref="base.module_category_hidden" />
         </record>
+
     </data>
 </odoo>
