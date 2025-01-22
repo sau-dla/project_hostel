@@ -12,6 +12,7 @@ Efficient management of all residential facilities in the school.
     'depends': ['base_setup'],
     'data': [
         'data/data.xml',
+        'data/room_stages.xml',
         'security/hostel_security.xml',
         'security/security_rules.xml',
         'security/ir.model.access.csv',

@@ -17,3 +17,4 @@ access_hostel_amenities_user_id,access.hostel.amenities,my_hostel.model_hostel_a
 access_hostel_book_user_id,access.hostel.book,my_hostel.model_res_partner,my_hostel.group_hostel_user,1,0,0,0
 access_hostel_room_member_user_id,access.hostel.room.member,my_hostel.model_hostel_room_member,my_hostel.group_hostel_user,1,0,0,0
 access_hostel_room_category_user_id,access.hostel.room.category,my_hostel.model_hostel_room_category,my_hostel.group_hostel_user,1,0,0,0
+access_hostel_room_stage_manager_id,access.hostel.room.stage,my_hostel.model_hostel_room_stage,my_hostel.group_hostel_manager,1,1,1,1
