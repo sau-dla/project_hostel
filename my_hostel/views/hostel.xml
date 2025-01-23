@@ -1,66 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   
-  <record id="view_hostel_list" model="ir.ui.view">
-    <field name="name">hostel.hostel.list</field>
-    <field name="model">hostel.hostel</field>
-    <field name="arch" type="xml">
-      <list>
-        <field name="name"/>
-        <field name="hostel_code"/>
-        <field name="email"/>
-        <field name="city"/>
-      </list>
-    </field>
-  </record>
+      <record id="view_hostel_list" model="ir.ui.view">
+          <field name="name">Hostel list</field>
+          <field name="model">hostel.hostel</field>
+          <field name="arch" type="xml">
+            <list>
+              <field name="name"/>
+              <field name="hostel_code"/>
+              <field name="email"/>
+              <field name="city"/>
+            </list>
+          </field>
+      </record>
 
-  <record id="view_hostel_form_view" model="ir.ui.view">
-    <field name="name">hostel.hostel.form.view</field>
-    <field name="model">hostel.hostel</field>
-    <field name="arch" type="xml">
-      <form string="Hostal">
-        <sheet>
-          <div class="oe_title">
-            <h3>
-              <table>
-                <tr>
-                  <td style="padding-right:10px;">
-                    <field name="name" required="1" placeholder="Name"/>
-                  </td>
-                  <td style="padding-right:10px;">
-                    <field name="hostel_code" placeholder="Code"/>
-                  </td>
-                  <td style="padding-right:10px;">
-                    <field name="image" widget="image" class="oe_avatar"/>
-                  </td>
-                </tr>
-              </table>
-            </h3>
-          </div>
-            <group>
-              <label for="street" string="address"/>
-              <div class="o_address_format">
-                <field name="street" placeholder="Street..." class="o_address_street"/>
-                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
-                <field name="city" placeholder="City" class="o_address_city"/>
-                <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'/>
-                <field name="zip" placeholder="Zip code" class="o_address_zip"/>
-                <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
-              </div>
-            </group>
-            <group>
-              <field name="mobile" widget="phone"/>
-              <field name="email" widget="email" context="{'gravatar_image': True}"/>
-              <field name="active"/>
-              <field name="hostel_rating"/>
-              <field name="other_info"/>
-            </group>
-          <group>
-            <field name="description"/>
-            <field name="ref_doc_id"/>
-          </group>
-        </sheet>
-      </form>
-    </field>
-  </record>
+      <record id="view_hostel_form_view" model="ir.ui.view">
+          <field name="name">Hostel form view</field>
+          <field name="model">hostel.hostel</field>
+          <field name="arch" type="xml">
+            <form string="Hostal">
+                <header groups="my_hostel.group_hostel_manager">
+                  <button name="add_details" string="Add Details" type="object"/>
+                </header>
+              <sheet>
+                <div class="oe_title">
+                  <h3>
+                    <table>
+                      <tr>
+                        <td style="padding-right:10px;">
+                          <field name="name" required="1" placeholder="Name"/>
+                        </td>
+                        <td style="padding-right:10px;">
+                          <field name="hostel_code" placeholder="Code"/>
+                        </td>
+                        <td style="padding-right:10px;">
+                          <field name="image" widget="image" class="oe_avatar"/>
+                        </td>
+                      </tr>
+                    </table>
+                  </h3>
+                </div>
+                  <group>
+                    <field name="details_added"/>
+                    <field name="is_public"/>
+                    <field name="date_start"/>
+                    <label for="street" string="address"/>
+                    <div class="o_address_format">
+                      <field name="street" placeholder="Street..." class="o_address_street"/>
+                      <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                      <field name="city" placeholder="City" class="o_address_city"/>
+                      <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'/>
+                      <field name="zip" placeholder="Zip code" class="o_address_zip"/>
+                      <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+                    </div>
+                  </group>
+                  <group>
+                    <field name="mobile" widget="phone"/>
+                    <field name="email" widget="email" context="{'gravatar_image': True}"/>
+                    <field name="active"/>
+                    <field name="hostel_rating"/>
+                    <field name="other_info"/>
+                  </group>
+                <group>
+                  <field name="description"/>
+                  <field name="ref_doc_id"/>
+                </group>
+              </sheet>
+            </form>
+          </field>
+      </record>
+
+      <record id="view_hostel_search" model="ir.ui.view">
+          <field name="name">Hostel Search</field>
+          <field name="model">hostel.hostel</field>
+          <field name="arch" type="xml">
+              <search string="Search Hostel">
+                  <field name="name"/>
+                  <field name="hostel_code"/>
+              </search>
+          </field>
+      </record>
+
 </odoo>

@@ -9,10 +9,12 @@ Efficient management of all residential facilities in the school.
     'category': 'Uncategorized',
     'version': '18.0',
     'license': 'AGPL-3',
-    'depends': ['base'],
+    'depends': ['base_setup'],
     'data': [
         'data/data.xml',
+        'data/room_stages.xml',
         'security/hostel_security.xml',
+        'security/security_rules.xml',
         'security/ir.model.access.csv',
         'views/hostel.xml',
         'views/hostel_room.xml',

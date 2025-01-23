@@ -9,3 +9,5 @@ class HostelAmenities(models.Model):
 
     hostel_id = fields.Many2one("hostel.hostel", "hostel",
     help="Name of hostel")
+
+    color = fields.Integer('Color Index', index=True)

@@ -13,6 +13,7 @@ class HostelRoom(models.Model):
     _description = "Hostel Room Information" 
     _rec_name_search = ['room name']
     
+    stage_id = fields.Many2one('hostel.room.stage', string="stage")
     room_name = fields.Char('Room Name')
 
     room_number = fields.Char(
@@ -62,6 +63,19 @@ class HostelRoom(models.Model):
     )
     room_rating = fields.Float('Room Rating')
 
+    color = fields.Integer('Color Index', index=True)
+
+    popularity = fields.Selection([
+    ('no', 'No Demand'),
+    ('low', 'Low Demand'),
+    ('medium', 'Average Demand'),
+    ('high', 'High Demand'),])
+
+    @api.model 
+    def _default_room_stage(self):
+        Stage = self.env['hostel.room.stage']
+        return Stage.search([], limit=1)
+
     @api.depends("student_per_room", "student_ids")
     def _compute_check_availability(self):
         """Method to check room availability"""
@@ -82,26 +96,26 @@ class HostelRoom(models.Model):
                 if new_discharge_date != record.discharge_date:
                     record.discharge_date = new_discharge_date.strftime('%Y-%m-%d')
 
-    @api.model
-    def is_allowed_transition(self, old_state, new_state):
-        allowed = [('draft', 'available'),
-                ('available', 'closed'),
-                ('closed', 'draft')] 
-        return (old_state, new_state) in allowed
+    # @api.model
+    # def is_allowed_transition(self, old_state, new_state):
+    #     allowed = [('draft', 'available'),
+    #             ('available', 'closed'),
+    #             ('closed', 'draft')] 
+    #     return (old_state, new_state) in allowed
 
-    def change_state(self, new_state):
-        for room in self:
-            if room.is_allowed_transition(room.state, new_state):
-                room.state = new_state
-            else:
-                msg = _('Moving from %s to %s is not allowed') % (room.state, new_state) 
-                raise UserError(msg)
+    # def change_state(self, new_state):
+    #     for room in self:
+    #         if room.is_allowed_transition(room.state, new_state):
+    #             room.state = new_state
+    #         else:
+    #             msg = _('Moving from %s to %s is not allowed') % (room.state, new_state) 
+    #             raise UserError(msg)
                 
-    def make_available(self):
-        self.change_state('available')
+    # def make_available(self):
+    #     self.change_state('available')
 
-    def make_closed(self):
-        self.change_state('closed')  
+    # def make_closed(self):
+    #     self.change_state('closed')  
 
     def log_all_room_members(self):
         hostel_room_obj = self.env['hostel.student']
@@ -163,30 +177,3 @@ class HostelRoom(models.Model):
     @api.model
     def sort_rooms_by_rating(self, rooms):
         return rooms.sorted(key='room_rating')
-
-    # @api.model
-    # def create(self, values):
-    #     if not self.env.user.has_group('my_hostel.group_hostel_manager') and values.get('remarks'):
-    #         raise UserError("You are not authorized to modify remarks")
-    #     return super(HostelRoom, self).create(values)
-
-    # @api.model
-    # def _rec_names_search(self, name, args=None, operator='ilike', limit=100):
-    #     records = self.browse([])
-    #     if name:
-    #         records = self.search([('display_name', operator, name)], limit=limit)
-    #     return records.name_get()
-
-    # @api.model
-    # def _update_room_price(self):
-    #         all_rooms = self.search([])
-    #         for room in all_rooms:
-    #                 room.cost_price += 10
-
-    # def return_room(self):
-    #         self.ensure_one()
-    #         wizard = self.env['assign.room.student.wizard']
-    #         with Form(wizard) as return_form:
-    #             return_form.room_id = self.env.ref('my_hostel.room1') 
-    #             record = return_form.save()
-    #             record.with_context(active_id=self.id).add_room_in_student()

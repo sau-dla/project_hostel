@@ -9,7 +9,6 @@
                     <field name="room_name"/>
                     <field name="room_number"/>
                     <field name="floor_number"/>
-                    <field name="state"/>
                     <field name="rent_amount"/>
                     <field name="student_ids" string= "registered users"/>
                     <field name="hostel_id"/>
@@ -26,9 +25,7 @@
                 <form string="hostel room Information">   
                         <group> 
                             <td style="padding-right:10px;">
-                                <button name="make_available" string="Make Available" type="object"/>
-                                <button name="make_closed" string="Make Borrowed" type="object"/>
-                                <field name="state" widget="statusbar"/>    
+                                <field name="stage_id" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}"/>
                             </td>
                         </group>
                     <header>
@@ -41,7 +38,7 @@
                     </header>
                     <sheet>
                         <group>
-                            <field name="state"/>
+                            <field name="popularity" widget="priority"/>
                             <field name="room_name"/>
                             <field name="room_number"/>          
                             <field name="floor_number"/>
@@ -63,7 +60,7 @@
                                 <field name="student_ids"/>
                             </page>
                             <page string="Amenities">
-                                <field name="amenity_ids"/>
+                                <field name="amenity_ids" options="{'color_field': 'color', 'no_create_edit': True}"/>
                             </page>
                         </notebook>
                     </sheet>
@@ -71,17 +68,55 @@
             </field>
         </record>
 
-        <record id="hostel_room_view_search" model="ir.ui.view">
-            <field name="name">hostel.room.search</field>
+        <record id="hostel_room_view_kanban" model="ir.ui.view">
+            <field name="name">Hostel room Kanban</field>
             <field name="model">hostel.room</field>
             <field name="arch" type="xml">
-                <search>
-                    <field name="room_name"/>
-                    <field name="state"/>
-                    <searchpanel>
-                        <field name="state" expand="1" select="multi" icon="fa-check-square-o" enable_counters="1"/>
-                    </searchpanel>
-                </search>
+                <kanban default_group_by="stage_id" on_create="quick_create" 
+                        quick_create_view="my_hostel.hostel_room_view_form_minimal">
+                    <progressbar field="popularity" 
+                                colors='{"low": "success", "medium": "warning", "high": "danger"}'/> 
+                    <field name="stage_id" />
+                    <field name="color" />
+                    <templates>
+                        <t t-name="kanban-box"> 
+                            <div t-attf-class="#{kanban_color(record.color)} oe_kanban_global_click"> 
+                                <div class="o_dropdown_kanban dropdown"> 
+                                    <a class="dropdown-toggle o-no-caret btn" 
+                                    role="button" data-toggle="dropdown">
+                                        <span class="fa fa-ellipsis-v"> </span>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable">
+                                            <a role="menuitem" type="edit" class="dropdown-item">Edit</a>
+                                        </t>
+                                        <t t-if="widget.deletable">
+                                            <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                                        </t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div class="oe_kanban_card oe_kanban_global_click">
+                                        <div>
+                                            <b><field name="room_name" /></b>
+                                            <div class="text-muted">
+                                                <i class="fa fa-building" />
+                                                <field name="hostel_id" />
+                                            </div>
+                                            <span class="oe_kanban_list_many2many"> 
+                                                <field name="amenity_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
+                                            </span>
+                                            <div>
+                                                <field name="popularity" widget="priority"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
             </field>
         </record>
 
