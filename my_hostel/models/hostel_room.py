@@ -11,7 +11,7 @@ class HostelRoom(models.Model):
     _name = "hostel.room"
     _inherit = ['base.archive']
     _description = "Hostel Room Information" 
-    _rec_name_search = ['room name']
+    _rec_name = 'room_name'
     
     stage_id = fields.Many2one('hostel.room.stage', string="stage")
     room_name = fields.Char('Room Name')
@@ -177,3 +177,4 @@ class HostelRoom(models.Model):
     @api.model
     def sort_rooms_by_rating(self, rooms):
         return rooms.sorted(key='room_rating')
+
